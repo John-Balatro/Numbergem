@@ -1,0 +1,26 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = 'engine/controller.lua'
+match_indent = true
+pattern = '''self.cursor_position.x, self.cursor_position.y = love.mouse.getPosition()'''
+position = 'after'
+payload = '''
+if G.GAME.in_battle and not G.SETTINGS.paused then
+  self.cursor_position.x = -100
+  self.cursor_position.y = -100
+end
+'''
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+match_indent = true
+pattern = '''hand_usage = {},'''
+position = 'after'
+payload = '''
+in_battle = false,
+'''

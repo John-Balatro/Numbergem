@@ -1,0 +1,14 @@
+{
+	"id": "numbergem",
+	"name": "Numbergem",
+	"author": ["John Balatro"],
+	"description": "Here is my Mod",
+	"prefix": "gem",
+	"main_file": "main.lua",
+	"badge_colour": "d14f81",
+	"version": "1.0.0",
+	"dependencies": [
+        "Steamodded(>=1.0.0~BETA-1224a)"
+    ],
+	"allow_redistribution": true
+}
