@@ -3655,7 +3655,7 @@ SMODS.Enhancement {
                     _cards[#_cards + 1] = playing_card
                 end
             end
-            if G.hand.cards[1] then
+            if G.hand.cards[1] and _cards[1] then
                 local selected_card, card_index = pseudorandom_element(_cards, '42')
                 eventify( function()
                     play_sound('tarot1')
